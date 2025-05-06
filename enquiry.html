@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seva Enquiry - Sri Jayarama Seva Mandali</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #fff8e1, #ffe0b2);
+            color: #333;
+        }
+        .enquiry-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            max-width: 600px;
+            margin: 50px auto;
+            text-align: center;
+            min-height: 300px; /* Added to ensure enough vertical space */
+        }
+        h1 {
+            color: #b71c1c;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+        .submit-button {
+            background: linear-gradient(45deg, #f57f17, #ffca28);
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        .submit-button:hover {
+            background: linear-gradient(45deg, #e65100, #ffb300);
+        }
+        #notLoggedIn .submit-button {
+            margin-top: 20px; /* Adjusted to create a reasonable gap */
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+            margin-bottom: 20px; /* Added to create space between error message and button */
+        }
+    </style>
+</head>
+<body>
+    <div class="enquiry-container">
+        <h1>Book Seva</h1>
+        <div id="notLoggedIn" style="display: none;">
+            <p class="error">You must be logged in to book a seva.</p>
+            <a href="login.html" class="submit-button">Go to Login</a>
+        </div>
+        <form id="bookingForm" style="display: none;">
+            <div class="form-group">
+                <label for="sevaName">Seva Name</label>
+                <input type="text" id="sevaName" readonly>
+            </div>
+            <div class="form-group">
+                <label for="sevaDate">Seva Date</label>
+                <input type="text" id="sevaDate" readonly>
+            </div>
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="details">Additional Details</label>
+                <textarea id="details" rows="4"></textarea>
+            </div>
+            <button type="submit" class="submit-button">Submit Booking</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const bookingForm = document.getElementById('bookingForm');
+            const notLoggedIn = document.getElementById('notLoggedIn');
+
+            if (isLoggedIn) {
+                bookingForm.style.display = 'block';
+                const selectedSeva = JSON.parse(localStorage.getItem('selectedSeva') || '{}');
+                document.getElementById('sevaName').value = selectedSeva.sevaName || '';
+                document.getElementById('sevaDate').value = selectedSeva.sevaDate || '';
+            } else {
+                notLoggedIn.style.display = 'block';
+            }
+
+            bookingForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Simulate booking submission (replace with backend API call)
+                alert('Seva booked successfully!');
+                localStorage.removeItem('selectedSeva');
+                window.location.href = 'index.html';
+            });
+        });
+    </script>
+</body>
+</html>

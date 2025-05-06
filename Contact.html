@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <meta name="author" content="SJRSM">
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>SJRSM.in</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="Explore the world with V CHAKRA TOURS! Offering customized travel and tour packages for all types of travelers. From exotic getaways to cultural explorations, discover the perfect adventure today." />
+
+
+ 
+  
+  
+<style>/* Existing styles (unchanged, included for context) */
+  .breadcrumb { 
+    padding: 30px 20px; 
+    font-size: 14px; 
+    margin: 20px 0;
+  }
+  .breadcrumb a { 
+    color: #333; 
+    text-decoration: none; 
+  }
+  .breadcrumb a:hover { 
+    color: black; 
+  }
+  
+  .contacts { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 30px; 
+    padding: 40px 20px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    margin-top: 10px;
+  }
+  
+  .img img { 
+    max-width: 100%; 
+    height: 375px; 
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .detail { 
+    flex: 1; 
+    min-width: 300px; 
+  }
+  
+  .detail h3 { 
+    font-size: 28px; 
+    color: #2c3e50; 
+    margin-bottom: 20px; 
+  }
+  
+  .contact, .mail { 
+    font-size: 16px; 
+    margin: 10px 0; 
+    color: #34495e; 
+  }
+  
+  .contact a, .mail a { 
+    color: #007bff; 
+    text-decoration: none; 
+    margin-left: 10px; 
+  }
+  
+  .contact a:hover, .mail a:hover { 
+    text-decoration: underline; 
+  }
+  
+  /* Contact form and map section */
+  .contact-map-section {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .contact-map-wrapper {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .contact-form, .map {
+    flex: 1;
+    min-width: 300px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0);
+  }
+  
+  .contact-form h3, .map h3 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form input, 
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .contact-form button {
+    background: #2c3e50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .contact-form button:hover {
+    background: #1a252f;
+  }
+  
+  .map iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 10px;
+  }
+  
+  /* Footer styles */
+  @media (min-width: 992px) {
+    .pq-copyright-footer {
+      margin-top: 30px;
+    }
+    .pq-footer-top {
+      padding-top: 30px;
+    }
+  }
+  
+  /* Ensure nav-links and dropdowns work on mobile */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+    .nav-links.active {
+      display: block;
+    }
+    .dropdown-content {
+      display: none;
+    }
+    .dropdown.active .dropdown-content {
+      display: block;
+    }
+    .sub-dropdown-content {
+      display: none;
+    }
+  }
+  
+  /* Existing responsive styles for small screens, updated for contact visibility */
+  @media (max-width: 768px) {
+    .contacts {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px 10px;
+    }
+    .img {
+      margin: 0 auto 20px;
+      margin-top: -30px;
+      max-width: 90%;
+    }
+    .img img {
+      height: 200px;
+    }
+    .contact, .mail {
+      font-size: 18px;
+      padding: 12px;
+      background-color: #e0f7fa;
+      border: 2px solid #00A9A5;
+      border-radius: 8px;
+      margin: 10px auto;
+      width: 90%;
+    }
+    .contact i, .mail i {
+      color: #00A9A5;
+      font-size: 20px;
+      margin-right: 10px;
+    }
+    /* Ensure .detail is visible */
+    .detail {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      min-height: auto !important;
+      margin: -20px auto -40px auto !important; /* Adjusted to move up slightly */
+    width: 90% !important;
+    }
+    .detail h3, .detail .contact, .detail .mail, .detail p {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+  }
+  
+  /* New: Increase font size even more on big screens (above 1024px) */
+  @media (min-width: 1024px) {
+    .detail h3 {
+      font-size: 40px !important; /* Increased from 36px */
+    }
+    .detail .contact, .detail .mail {
+      font-size: 22px !important; /* Increased from 20px */
+    }
+    .detail p {
+      font-size: 22px !important; /* Increased from 20px */
+    }
+  }
+  
+  /* New: Fix image width on small screens (below 640px) */
+  @media (max-width: 640px) {
+    .img img {
+      max-width: 80% !important; /* Updated to 80% as per your latest CSS */
+      height: auto !important;
+      object-fit: contain !important;
+      margin: 0 auto !important;
+      display: block !important;
+      border: 2px solid blue !important; /* Debug */
+    }
+  }</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="header">
+        <nav class="navbar">
+            <div class="logo" style="display: flex; align-items: center;">
+                <img src="images/l-2.png" style="width: 80px; height: 80px;  margin-left: 3px;background: linear-gradient(#f7971e, #ffd200);" alt="SJRSM Logo">
+                <span class="brand-name" style="font-weight: bold; font-size: 24px; margin-left: 10px; font-family: sans-serif;">
+                    <span style="color: #000000;">SRI JAYARAMA SEVA MANDALI</span>
+                </span>
+            </div>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+              <li><a href="index.html"><h4>Home</h4></a></li>
+              <li><a href="About_us.html"><h4>About Us</h4></a></li>
+              <li class="dropdown">
+                  <a href="javascript:void(0);" class="dropdown-toggle"><h4>Events</h4></a> <!-- Fixed typo: changed <h3> to <h4> -->
+                  <div class="dropdown-content">
+                     
+                      <a href="Upcoming Pooja Dates.html">Upcoming Pooja Dates</a>
+                     
+                      <a href="javascript:void(0);" class="toggle-sub" data-target="days4">Previous Events <i class="fa-solid fa-angle-right"></i></a>
+                      <div class="sub-dropdown-content" id="days4">
+                          <a href="koti.html">Terah Koti Ramanama Lekhana Yagna</a>
+                          <a href="Upanyasa.html">Upanyasa</a>
+                          <a href="ramayana.html">Ramayana Spardhe</a>
+                          <a href="vaikunta.html">Vaikunta Ekadashi</a>
+                          <a href="Dinadarshi.html">Jayarama Dinadarshi</a>
+                      </div>
+                  </div>
+              </li>
+              <li><a href="Book-seva.html"><h4>Seva</h4></a></li>
+         
+              <li><a href="gallery.html"><h4>Gallery</h4></a></li>
+              <li><a href="Contact.html"><h4>Contact Us</h4></a></li>
+              <li><a href="login.html"><h4>Login</h4></a></li>
+          </ul>
+        </nav>
+    </div>
+
+    <!-- Keep only one Font Awesome link, move to <head> if needed -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (menuToggle && navLinks) {
+                // Single menu toggle listener
+                menuToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Menu toggle clicked');
+                    navLinks.classList.toggle('active');
+                });
+
+                // Main dropdown toggle on mobile (≤768px)
+                document.querySelectorAll('.dropdown .dropdown-toggle').forEach(toggle => {
+                    toggle.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            this.closest('.dropdown').classList.toggle('active');
+                        }
+                    });
+                });
+
+                // Sub-dropdown toggle
+                document.querySelectorAll('.toggle-sub').forEach(toggle => {
+                    toggle.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        console.log('Previous Events clicked');
+                        const targetId = this.getAttribute('data-target');
+                        const targetDropdown = document.getElementById(targetId);
+                        console.log('Target ID:', targetId, 'Target Dropdown:', targetDropdown);
+
+                        // Close other submenus
+                        document.querySelectorAll('.sub-dropdown-content').forEach(menu => {
+                            if (menu !== targetDropdown) menu.style.display = 'none';
+                        });
+                        document.querySelectorAll('.toggle-sub').forEach(link => {
+                            if (link !== this) link.classList.remove('active');
+                        });
+
+                        // Toggle current submenu
+                        if (targetDropdown && targetDropdown.style.display === 'block') {
+                            targetDropdown.style.display = 'none';
+                            this.classList.remove('active');
+                        } else if (targetDropdown) {
+                            targetDropdown.style.display = 'block';
+                            this.classList.add('active');
+                        } else {
+                            console.error('Target dropdown not found for ID:', targetId);
+                        }
+                    });
+                });
+
+                // Close menu and dropdowns when clicking outside on mobile
+                document.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                            navLinks.classList.remove('active');
+                            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                                dropdown.classList.remove('active');
+                            });
+                            document.querySelectorAll('.sub-dropdown-content').forEach(menu => {
+                                menu.style.display = 'none';
+                            });
+                            document.querySelectorAll('.toggle-sub').forEach(link => {
+                                link.classList.remove('active');
+                            });
+                        }
+                    }
+                });
+            } else {
+                console.log('Error: .menu-toggle or .nav-links not found in the DOM');
+            }
+        });
+    </script>
+
+    <style>
+        /* Ensure nav-links and dropdowns work on mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.active {
+                display: block; /* Show main menu when active */
+            }
+
+            .dropdown-content {
+                display: none; /* Hide dropdown by default */
+            }
+
+            .dropdown.active .dropdown-content {
+                display: block; /* Show dropdown when active */
+            }
+
+            .sub-dropdown-content {
+                display: none; /* Hide sub-dropdown by default */
+            }
+        }
+    </style>
+</header>
+  <!-- header -->
+  <div class="breadcrumb">
+    <a href="#"></a> >
+  </div>
+  
+  <section class="contacts">
+    <div class="img">
+      <img src="images/contact.jpg" class="test-img" alt="Your image" loading="lazy">
+    </div>
+    <div class="detail">
+      <h3>Contact Us</h3>
+      <p class="contact">
+        <i class="fa-solid fa-phone"></i>
+        <a href="tel:+918022445232">080 22445232</a>
+      </p>
+      <p class="mail">
+        <i class="fa-solid fa-envelope"></i>
+        <a href="mailto:jayaramasevamandali@gmail.com">jayaramasevemandali@gmail.com</a>
+      </p>
+      <p><b>Address:</b> SRI JAYARAMA SEVA MANDALI(R), 492/A, SRI JAYARAMA SEVA MANDALI ROAD, 1ST MAIN, 8TH BLOCK, JAYANAGAR, BANGLORE - 560070, INDIA</p>
+    </div>
+  </section>
+
+  <style>
+    /* Highly specific to override conflicts */
+    .test-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      object-fit: contain !important;
+      display: block !important;
+      border: 2px solid red !important; /* Debug */
+    }
+  
+    @media (max-width: 640px) {
+      .test-img {
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        margin: 0 auto !important;
+        border: 2px solid blue !important; /* Debug */
+      }
+    }
+  </style>
+  
+  <section class="contact-map-section">
+    <div class="container">
+      <div class="contact-map-wrapper">
+        <div class="contact-form">
+          <h3>Send Us a Message</h3>
+          <form action="#" method="post">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="text" placeholder="Subject" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+        <div class="map">
+          <h3>Find Us</h3>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.123456!2d74.7456!3d13.3419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x29dea23199fc780e!2sShree+Jayarama+Seva+Mandali!5e0!3m2!1sen!2sin!4v1713628800!5m2!1sen!2sin" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- footer -->
+
+  <footer id="pq-footer">
+    <div class="pq-footer-style-1">
+      <div class="pq-footer-top">
+        <div class="pq-footer-bottom-list">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-12">
+                <div class="pq-footer-contact-vertical text-center mb-5">
+                  
+  
+                  <div class="pq-footer-items d-flex justify-content-center align-items-start flex-column flex-md-row gap-4">
+                    <div class="pq-footer-item text-start">
+                      <i class="ti-location-pin"></i>
+                      <div class="pq-footer-items-info">
+                        <h4>Address</h4>
+                        <span> Sri Jayarama Seva Mandali(R), 492/A, Sri Jayarama Seva<br/>
+                           Mandli Road, 1st main, 8th block, Jayanagar,<br/>
+                           Banglore - 560070, India</span>
+                      </div>
+                    </div>
+  
+                    <div class="pq-footer-item text-start">
+                        <i class="ti-email"></i>
+                        <div class="pq-footer-items-info">
+                          <h4>Email Us</h4>
+                          <a href="mailto:jayaramasevamandali@gmail.com"><span>jayaramasevamandali@gmail.com</span></a>
+                        </div>
+                      </div>
+  
+                    <div class="pq-footer-item text-start">
+                      <i class="ti-mobile"></i>
+                      <div class="pq-footer-items-info">
+                        <h4>Contact Us</h4>
+                        <a href="tel:080 22445232"><span>080 22445232</span></a>
+                      </div>
+                    </div>
+  
+                   
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- 3 Columns Section -->
+        <div class="container">
+    <!-- Wrapper for About + Services on large screen -->
+   
+  
+  
+      <!-- Bottom bar -->
+      <div class="pq-copyright-footer">
+        <div class="container">
+          <div class="footer-row">
+            <div class="pq-footer-social">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item">
+                  <a href="https://youtube.com/@srijayaramasevamandali">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <span class="pq-copyright">Designed by Bloom IT Solutions</span>
+          </div>
+        </div>
+      </div>
+      
+      
+  </footer>
+  
+  <style>
+  @media (min-width: 992px) {
+    .pq-copyright-footer {
+      margin-top: 30px; /* adjust as needed */
+      
+    }
+    
+    .pq-footer-top {
+    padding-top: 30px; /* Adjust the value to your preference */
+  }
+
+  }
+  @media (max-width: 991.98px) {
+  .pq-footer-items .pq-footer-item:nth-child(2)
+   {
+    position: relative;
+    top: -30px;
+  }
+
+  .pq-footer-items .pq-footer-item:nth-child(3)
+   {
+    position: relative;
+    top: -60px;
+  }
+  .pq-copyright-footer
+  {
+   padding-bottom: 20px;
+  }
+}
+  
+  </style>
+  
+</main>
+</body>
+</html>

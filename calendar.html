@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Calendar - Sri Jayarama Seva Mandali</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="keywords" content="Sri Jayarama Seva Mandali, event calendar, spiritual events, Bangalore">
+  <meta name="description" content="Explore the 2025-2026 event calendar of Sri Jayarama Seva Mandali, featuring spiritual celebrations like Sri Ramanavami, Pratishta Vardhanti Mahotsava, and weekly Prakarothsava Seva.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #f0f2f5 0%, #e3e8ee 100%);
+     
+  color: #222;
+  position: relative;
+}
+
+
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      z-index: -1;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        background: linear-gradient(135deg, #f0f2f5 0%, #e3e8ee 100%);
+     
+    }
+    }
+
+   
+
+
+
+    
+
+
+
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none;
+      }
+      .nav-links {
+        display: flex !important;
+      }
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      .dropdown-content .toggle-sub:hover + .sub-dropdown-content,
+      .sub-dropdown-content:hover {
+        display: block;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+      }
+      .nav-links.active {
+        display: block;
+      }
+      .nav-links li {
+        display: block;
+      }
+      .nav-links a {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+      .nav-links a span {
+        font-size: 0.9rem;
+      }
+      .dropdown-content {
+        display: none;
+        position: static;
+        box-shadow: none;
+        background: #f9f9f9;
+        min-width: 100%;
+      }
+      .dropdown.active .dropdown-content {
+        display: block;
+      }
+      .dropdown-content a {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+      .sub-dropdown-content {
+        display: none;
+        position: static;
+        box-shadow: none;
+        background: #f0f0f0;
+        padding-left: 10px;
+        min-width: 100%;
+      }
+      .sub-dropdown-content a {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+        line-height: 1.3;
+      }
+    }
+
+    .fa-solid {
+      margin-left: 5px;
+    }
+
+    .calendar-container {
+      max-width: 1300px;
+      margin: 60px auto;
+      margin-top: 100px;
+      padding: 0 20px;
+    }
+
+    .calendar-title {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 50px;
+      color: #1a1a1a;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      position: relative;
+      animation: slideIn 1s ease-out;
+    }
+
+    .calendar-title::after {
+      content: '';
+      width: 100px;
+      height: 4px;
+      background: #25D366;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .calendar-intro {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      color: #333;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    /* Highlighted Event Section */
+    .highlighted-event {
+      background: linear-gradient(135deg, #fff9e6, #ffe8b3);
+      border: 2px solid #25D366;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      animation: highlightPulse 2s infinite ease-in-out;
+    }
+
+    .highlighted-event h3 {
+      font-size: 1.8rem;
+      color: #1a1a1a;
+      margin-bottom: 10px;
+    }
+
+    .highlighted-event p {
+      font-size: 1.1rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .highlighted-event .location {
+      font-style: italic;
+      color: #555;
+    }
+
+    @keyframes highlightPulse {
+      0% { transform: scale(1); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); }
+      50% { transform: scale(1.02); box-shadow: 0 8px 20px rgba(0, 128, 0, 0.2); }
+      100% { transform: scale(1); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15); }
+    }
+
+    .calendar-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .calendar-table th,
+    .calendar-table td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    .calendar-table th {
+      background: #25D366;
+      color: #fff;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+    }
+
+    .calendar-table td {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .calendar-table tr:hover {
+      background: #f5f5f5;
+    }
+
+    .calendar-table .description {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .join-us-button {
+      display: block;
+      width: 200px;
+      margin: 20px auto;
+      padding: 12px 20px;
+      background: #25D366;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border-radius: 8px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    .join-us-button:hover {
+      background: #1ebb50;
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 128, 0, 0.4);
+    }
+
+    .join-us-button:active {
+      transform: scale(0.95);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); }
+      50% { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0, 128, 0, 0.3); }
+      100% { transform: scale(1); box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); }
+    }
+
+    .info-section {
+      max-width: 1000px;
+      margin: 0 auto 60px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .info-section h2 {
+      font-size: 2rem;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .info-section p {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+   
+
+    @keyframes bounceIn {
+      0% { transform: scale(0); opacity: 0; }
+      60% { transform: scale(1.25); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+   
+
+    @media (max-width: 768px) {
+      .calendar-title {
+        font-size: 2.2rem;
+      }
+      .highlighted-event h3 {
+        font-size: 1.6rem;
+      }
+      .highlighted-event p {
+        font-size: 1rem;
+      }
+      .calendar-table th,
+      .calendar-table td {
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+      .calendar-table .description {
+        font-size: 0.85rem;
+      }
+      .info-section h2 {
+        font-size: 1.8rem;
+      }
+      .join-us-button {
+        width: 180px;
+        padding: 10px 15px;
+        font-size: 1rem;
+      }
+     
+    }
+
+    @media (max-width: 576px) {
+      .calendar-title {
+        font-size: 1.8rem;
+      }
+      .highlighted-event h3 {
+        font-size: 1.4rem;
+      }
+      .highlighted-event p {
+        font-size: 0.9rem;
+      }
+      .calendar-table th,
+      .calendar-table td {
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+      .calendar-table th {
+        display: none;
+      }
+      .calendar-table td {
+        padding: 8px;
+        font-size: 0.85rem;
+        border-bottom: none;
+      }
+      .calendar-table tr {
+        border-bottom: 1px solid #eee;
+        margin-bottom: 10px;
+      }
+      .join-us-button {
+        width: 160px;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <nav class="navbar">
+                <div class="logo" style="display: flex; align-items: center;">
+                    <img src="images/l-2.png" style="width: 80px; height: 80px;  margin-left: 3px;background: linear-gradient(#f7971e, #ffd200);" alt="SJRSM Logo">
+                    <span class="brand-name" style="font-weight: bold; font-size: 24px; margin-left: 10px; font-family: sans-serif;">
+                        <span style="color: #000000;">SRI JAYARAMA SEVA MANDALI</span>
+                    </span>
+                </div>
+                <div class="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html"><h4>Home</h4></a></li>
+                    <li><a href="About_us.html"><h4>About Us</h4></a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle"><h4>Events</h4></a> <!-- Fixed typo: changed <h3> to <h4> -->
+                        <div class="dropdown-content">
+                           
+                            <a href="Upcoming Pooja Dates.html">Upcoming Pooja Dates</a>
+                           
+                            <a href="javascript:void(0);" class="toggle-sub" data-target="days4">Previous Events <i class="fa-solid fa-angle-right"></i></a>
+                            <div class="sub-dropdown-content" id="days4">
+                                <a href="koti.html">Terah Koti Ramanama Lekhana Yagna</a>
+                                <a href="Upanyasa.html">Upanyasa</a>
+                                <a href="ramayana.html">Ramayana Spardhe</a>
+                                <a href="vaikunta.html">Vaikunta Ekadashi</a>
+                                <a href="Dinadarshi.html">Jayarama Dinadarshi</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="Book-seva.html"><h4>Seva</h4></a></li>
+         
+                    <li><a href="gallery.html"><h4>Gallery</h4></a></li>
+                    <li><a href="Contact.html"><h4>Contact Us</h4></a></li>
+                    <li><a href="login.html"><h4>Login</h4></a></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <!-- Keep only one Font Awesome link, move to <head> if needed -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navLinks = document.querySelector('.nav-links');
+    
+                if (menuToggle && navLinks) {
+                    // Single menu toggle listener
+                    menuToggle.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        console.log('Menu toggle clicked');
+                        navLinks.classList.toggle('active');
+                    });
+    
+                    // Main dropdown toggle on mobile (≤768px)
+                    document.querySelectorAll('.dropdown .dropdown-toggle').forEach(toggle => {
+                        toggle.addEventListener('click', function(e) {
+                            if (window.innerWidth <= 768) {
+                                e.preventDefault();
+                                this.closest('.dropdown').classList.toggle('active');
+                            }
+                        });
+                    });
+    
+                    // Sub-dropdown toggle
+                    document.querySelectorAll('.toggle-sub').forEach(toggle => {
+                        toggle.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            console.log('Previous Events clicked');
+                            const targetId = this.getAttribute('data-target');
+                            const targetDropdown = document.getElementById(targetId);
+                            console.log('Target ID:', targetId, 'Target Dropdown:', targetDropdown);
+    
+                            // Close other submenus
+                            document.querySelectorAll('.sub-dropdown-content').forEach(menu => {
+                                if (menu !== targetDropdown) menu.style.display = 'none';
+                            });
+                            document.querySelectorAll('.toggle-sub').forEach(link => {
+                                if (link !== this) link.classList.remove('active');
+                            });
+    
+                            // Toggle current submenu
+                            if (targetDropdown && targetDropdown.style.display === 'block') {
+                                targetDropdown.style.display = 'none';
+                                this.classList.remove('active');
+                            } else if (targetDropdown) {
+                                targetDropdown.style.display = 'block';
+                                this.classList.add('active');
+                            } else {
+                                console.error('Target dropdown not found for ID:', targetId);
+                            }
+                        });
+                    });
+    
+                    // Close menu and dropdowns when clicking outside on mobile
+                    document.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                                navLinks.classList.remove('active');
+                                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                                    dropdown.classList.remove('active');
+                                });
+                                document.querySelectorAll('.sub-dropdown-content').forEach(menu => {
+                                    menu.style.display = 'none';
+                                });
+                                document.querySelectorAll('.toggle-sub').forEach(link => {
+                                    link.classList.remove('active');
+                                });
+                            }
+                        }
+                    });
+                } else {
+                    console.log('Error: .menu-toggle or .nav-links not found in the DOM');
+                }
+            });
+        </script>
+    
+        <style>
+            /* Ensure nav-links and dropdowns work on mobile */
+            @media (max-width: 768px) {
+                .nav-links {
+                    display: none;
+                }
+    
+                .nav-links.active {
+                    display: block; /* Show main menu when active */
+                }
+    
+                .dropdown-content {
+                    display: none; /* Hide dropdown by default */
+                }
+    
+                .dropdown.active .dropdown-content {
+                    display: block; /* Show dropdown when active */
+                }
+    
+                .sub-dropdown-content {
+                    display: none; /* Hide sub-dropdown by default */
+                }
+            }
+        </style>
+    </header>
+
+  <div class="calendar-container">
+    <h1 class="calendar-title">2025-2026 Event Calendar</h1>
+    <p class="calendar-intro">
+      Join us at Sri Jayarama Seva Mandali for a series of spiritual and cultural events celebrating devotion, tradition, and community. Our 2025-2026 calendar features sacred observances, festive gatherings, and weekly Prakarothsava Seva with Samoohika Sri Vishnusahasranama Parayana.
+    </p>
+
+    <div class="highlighted-event">
+      <h3>Weekly Prakarothsava Seva & Samoohika Sri Vishnusahasranama Parayana</h3>
+      <p>Every Saturday at 5:30 PM</p>
+      <p class="location">At Sri Jayarama Sannidhi, Bangalore</p>
+      <p>Join our weekly collective chanting of Sri Vishnusahasranama and Prakarothsava Seva to invoke divine blessings and foster spiritual unity.</p>
+    </div>
+
+    <table class="calendar-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Program</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>31.05.2025 (Saturday)</td>
+          <td>Chaitra Krishna Trayodashi: 43rd Annual Pratishta Vardhanti Mahotsava</td>
+          <td class="description">Celebrate the 43rd anniversary of our temple’s consecration with special poojas, bhajans, and community festivities.</td>
+        </tr>
+        <tr>
+          <td>22.08.2025 (Friday)</td>
+          <td>Simha Masa Puja, Samoohika Sri Lakshmi Pooja</td>
+          <td class="description">Participate in the collective worship of Goddess Lakshmi for prosperity and well-being during Simha Masa.</td>
+        </tr>
+        <tr>
+          <td>02.12.2025 (Tuesday)</td>
+          <td>Sri Jayaramadevara Aradhana</td>
+          <td class="description">Honor the legacy of Sri Jayaramadevara with devotional offerings and prayers.</td>
+        </tr>
+        <tr>
+          <td>30.12.2025 (Tuesday)</td>
+          <td>Sri Vadiraja Tirtha Aradhana, Sri Purandara Dasa Aradhana</td>
+          <td class="description">Commemorate the contributions of these revered saints with special discourses and musical tributes.</td>
+        </tr>
+        <tr>
+          <td>07.01.2026 (Wednesday)</td>
+          <td>Sri Raghavendra Swamy Aradhana, Sri Vedavyasa Jayanthi, Sri Madhwacharya Jayanthi, Samoohika Sri Vishnusahasranama Parayana</td>
+          <td class="description">Join us for a grand celebration with collective chanting of Vishnu Sahasranama and tributes to these spiritual luminaries.</td>
+        </tr>
+        <tr>
+          <td>19.03.2026 (Thursday)</td>
+          <td>Sri Madhwa Navami, Special Poojas and Programs</td>
+          <td class="description">Observe Sri Madhwa Navami with dedicated poojas and programs celebrating the Dvaita philosophy founder.</td>
+        </tr>
+        <tr>
+          <td>26.03.2026 (Thursday)</td>
+          <td>Sri Ramanavami 2026, Sri Jayaramadevara Rathotsava</td>
+          <td class="description">Celebrate Lord Rama’s birth with vibrant processions, poojas, and the grand Rathotsava chariot festival.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <a href="Book-seva.html" class="join-us-button">Select Seva</a>
+
+    <div class="info-section">
+      <h2>Significance of Our Events</h2>
+      <p>
+        At Sri Jayarama Seva Mandali, our events are deeply rooted in the traditions of Sanatana Dharma, celebrating the teachings of great saints like Sri Madhwacharya, Sri Raghavendra Swamy, and Sri Purandara Dasa. Each program is designed to foster spiritual growth, community unity, and devotion.
+      </p>
+      <p>
+        The <strong>Prakarothsava Seva</strong> and <strong>Samoohika Sri Vishnusahasranama Parayana</strong> every Saturday offer devotees a weekly opportunity to connect with the divine through collective chanting and rituals. The <strong>Pratishta Vardhanti Mahotsava</strong> marks the temple’s founding, while <strong>Sri Ramanavami</strong> and the <strong>Rathotsava</strong> bring joyous celebrations of Lord Rama.
+      </p>
+      <p>
+        Join us to experience the divine atmosphere, participate in sacred rituals, and connect with our vibrant community in Bangalore.
+      </p>
+    </div>
+  </div>
+
+
+  <footer id="pq-footer">
+    <div class="pq-footer-style-1">
+      <div class="pq-footer-top">
+        <div class="pq-footer-bottom-list">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-12">
+                <div class="pq-footer-contact-vertical text-center mb-5">
+                  <div class="pq-footer-items d-flex justify-content-center align-items-start flex-column flex-md-row gap-4">
+                    <div class="pq-footer-item text-start">
+                      <i class="ti-location-pin"></i>
+                      <div class="pq-footer-items-info">
+                        <h4>Address</h4>
+                        <span> Sri Jayarama Seva Mandali(R), 492/A, Sri Jayarama Seva<br/>
+                          Mandli Road, 1st main, 8th block, Jayanagar,<br/>
+                          Bangalore - 560070, India</span>
+                      </div>
+                    </div>
+                    <div class="pq-footer-item text-start">
+                      <i class="ti-email"></i>
+                      <div class="pq-footer-items-info">
+                        <h4>Email Us</h4>
+                        <a href="mailto:jayaramasevamandali@gmail.com"><span>jayaramasevamandali@gmail.com</span></a>
+                      </div>
+                    </div>
+                    <div class="pq-footer-item text-start">
+                      <i class="ti-mobile"></i>
+                      <div class="pq-footer-items-info">
+                        <h4>Contact Us</h4>
+                        <a href="tel:08022445232"><span>080 22445232</span></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pq-copyright-footer">
+        <div class="container">
+          <div class="footer-row">
+            <div class="pq-footer-social">
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item">
+                  <a href="https://youtube.com/@srijayaramasevamandali">
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <span class="pq-copyright">Designed by Bloom IT Solutions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      @media (min-width: 992px) {
+        .pq-copyright-footer {
+          margin-top: 30px;
+        }
+        .pq-footer-top {
+          padding-top: 30px;
+        }
+      }
+      @media (max-width: 991.98px) {
+        .pq-footer-items .pq-footer-item:nth-child(2) {
+          position: relative;
+          top: -30px;
+        }
+        .pq-footer-items .pq-footer-item:nth-child(3) {
+          position: relative;
+          top: -60px;
+        }
+        .pq-copyright-footer {
+          padding-bottom: 20px;
+        }
+      }
+    </style>
+  </footer>
+</body>
+</html>

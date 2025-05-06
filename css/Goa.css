@@ -1,0 +1,247 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container */
+.package-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.breadcrumb a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Header Section */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* allows wrapping on smaller screens */
+    gap: 10px;
+    padding: 15px;
+  }
+  .header-text {
+    max-width: 70%;
+  }
+  
+  .package-title {
+    font-size: 1.8rem;
+    margin: 0;
+  }
+  
+  .sub-title,
+  .pac_price {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+  
+  .pre-booking-btn {
+    background-color: #f2f2f2;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    margin-left: 65%;
+  }
+  
+  .pre-booking-btn a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+
+/* Pricing & Contact */
+.pac {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.package-price .pac_price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #222;
+}
+
+.package-price .pac_du {
+    font-size: 14px;
+    color: #777;
+}
+
+.contact-btn a {
+    color: #007BFF;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-btn a:hover {
+    text-decoration: underline;
+}
+
+/* Image Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal img {
+    display: block;
+    max-width: 80%;
+    margin: 40px auto;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 28px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Description */
+.description {
+    margin-top: 20px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Day-wise Sections */
+.day-section {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.day-image {
+    width: 100%; /* Ensure full width of its container */
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Ensure images scale to fit container without distortion */
+    border-radius: 10px;
+}
+
+/* On large screens, limit image width */
+@media (min-width: 1024px) {
+    .day-image {
+        width: 40%; /* Limit width to 60% of the container */
+        margin: 0 auto; /* Center the image */
+    }
+}
+
+.day-plan {
+    flex: 1;
+}
+
+.day-plan .day-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.day-plan ul {
+    padding-left: 20px;
+}
+
+.point li,
+.point1 li {
+    margin-bottom: 8px;
+}
+
+.point1 {
+    margin-left: 15px;
+    list-style-type: circle;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    .header-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .pac {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .day-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .day-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0;
+    }
+    .description
+    {
+        margin-right: 50px;
+    }
+
+    .day-plan {
+        width: 100%;
+    }
+
+    .package-title {
+        font-size: 24px;
+    }
+
+   
+    .day-plan .day-title {
+        font-size: 18px;
+    }
+    .pre-booking-btn {
+        align-self: flex-start;
+        font-size: 14px;
+        padding: 2px 10px;
+        margin-left: 150px; /* reduce if too far down */
+    }
+}
+@media (max-width: 767px) {
+    .pre-booking-btn {
+        border: 2px solid red; /* Should show red border */
+    }
+}
+
+
+

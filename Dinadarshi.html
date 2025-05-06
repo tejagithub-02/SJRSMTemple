@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jayarama Dinadarshi - Sri Jayarama Seva Mandali</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="keywords" content="Jayarama Dinadarshi, Hindu Calendar, Panchang, Sri Jayarama Seva Mandali, Bengaluru" />
+  <meta name="description" content="Discover the Jayarama Dinadarshi, a Hindu panchang by Sri Jayarama Seva Mandali, guiding devotees with daily astrological and religious insights for 2025." />
+</head>
+<body>
+  <header>
+    <div class="header">
+        <nav class="navbar">
+            <div class="logo" style="display: flex; align-items: center;">
+                <img src="images/l-2.png" style="width: 80px; height: 80px;  margin-left: 3px;background: linear-gradient(#f7971e, #ffd200);" alt="SJRSM Logo">
+                <span class="brand-name" style="font-weight: bold; font-size: 24px; margin-left: 10px; font-family: sans-serif;">
+                    <span style="color: #000000;">SRI JAYARAMA SEVA MANDALI</span>
+                </span>
+            </div>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+              <li><a href="index.html"><h4>Home</h4></a></li>
+              <li><a href="About_us.html"><h4>About Us</h4></a></li>
+              <li class="dropdown">
+                  <a href="javascript:void(0);" class="dropdown-toggle"><h4>Events</h4></a> <!-- Fixed typo: changed <h3> to <h4> -->
+                  <div class="dropdown-content">
+                     
+                      <a href="Upcoming Pooja Dates.html">Upcoming Pooja Dates</a>
+                     
+                      <a href="javascript:void(0);" class="toggle-sub" data-target="days4">Previous Events <i class="fa-solid fa-angle-right"></i></a>
+                      <div class="sub-dropdown-content" id="days4">
+                          <a href="koti.html">Terah Koti Ramanama Lekhana Yagna</a>
+                          <a href="Upanyasa.html">Upanyasa</a>
+                          <a href="ramayana.html">Ramayana Spardhe</a>
+                          <a href="vaikunta.html">Vaikunta Ekadashi</a>
+                          <a href="Dinadarshi.html">Jayarama Dinadarshi</a>
+                      </div>
+                  </div>
+              </li>
+              <li><a href="Book-seva.html"><h4>Seva</h4></a></li>
+         
+              <li><a href="gallery.html"><h4>Gallery</h4></a></li>
+              <li><a href="Contact.html"><h4>Contact Us</h4></a></li>
+              <li><a href="login.html"><h4>Login</h4></a></li>
+          </ul>
+        </nav>
+    </div>
+
+    <!-- Keep only one Font Awesome link, move to <head> if needed -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (menuToggle && navLinks) {
+                // Single menu toggle listener
+                menuToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Menu toggle clicked');
+                    navLinks.classList.toggle('active');
+                });
+
+                // Main dropdown toggle on mobile (≤768px)
+                document.querySelectorAll('.dropdown .dropdown-toggle').forEach(toggle => {
+                    toggle.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            this.closest('.dropdown').classList.toggle('active');
+                        }
+                    });
+                });
+
+                // Sub-dropdown toggle
+                document.querySelectorAll('.toggle-sub').forEach(toggle => {
+                    toggle.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        console.log('Previous Events clicked');
+                        const targetId = this.getAttribute('data-target');
+                        const targetDropdown = document.getElementById(targetId);
+                        console.log('Target ID:', targetId, 'Target Dropdown:', targetDropdown);
+
+                        // Close other submenus
+                        document.querySelectorAll('.sub-dropdown-content').forEach(menu => {
+                            if (menu !== targetDropdown) menu.style.display = 'none';
+                        });
+                        document.querySelectorAll('.toggle-sub').forEach(link => {
+                            if (link !== this) link.classList.remove('active');
+                        });
+
+                        // Toggle current submenu
+                        if (targetDropdown && targetDropdown.style.display === 'block') {
+                            targetDropdown.style.display = 'none';
+                            this.classList.remove('active');
+                        } else if (targetDropdown) {
+                            targetDropdown.style.display = 'block';
+                            this.classList.add('active');
+                        } else {
+                            console.error('Target dropdown not found for ID:', targetId);
+                        }
+                    });
+                });
+
+                // Close menu and dropdowns when clicking outside on mobile
+                document.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                            navLinks.classList.remove('active');
+                            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                                dropdown.classList.remove('active');
+                            });
+                            document.querySelectorAll('.sub-dropdown-content').forEach(menu => {
+                                menu.style.display = 'none';
+                            });
+                            document.querySelectorAll('.toggle-sub').forEach(link => {
+                                link.classList.remove('active');
+                            });
+                        }
+                    }
+                });
+            } else {
+                console.log('Error: .menu-toggle or .nav-links not found in the DOM');
+            }
+        });
+    </script>
+
+    <style>
+        /* Ensure nav-links and dropdowns work on mobile */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-links.active {
+                display: block; /* Show main menu when active */
+            }
+
+            .dropdown-content {
+                display: none; /* Hide dropdown by default */
+            }
+
+            .dropdown.active .dropdown-content {
+                display: block; /* Show dropdown when active */
+            }
+
+            .sub-dropdown-content {
+                display: none; /* Hide sub-dropdown by default */
+            }
+        }
+    </style>
+</header>
+  <section class="dinadarshi-section">
+    <div class="dinadarshi-content">
+      <div class="content-wrapper">
+        <div class="image-grid">
+          <div class="card">
+            <img src="images/j-1.jpg" alt="Hindu calendar with astrological details" class="dinadarshi-img">
+          </div>
+          <div class="card">
+            <img src="images/j-2.jpg" alt="Traditional Hindu almanac display" class="dinadarshi-img">
+          </div>
+          <div class="card">
+            <img src="images/j-3.jpg" alt="Devotees consulting panchang for rituals" class="dinadarshi-img">
+          </div>
+        </div>
+        <div class="text-content">
+          <h1>Jayarama Dinadarshi</h1>
+          <p class="intro">The Jayarama Dinadarshi is a revered Hindu panchang curated by Sri Jayarama Seva Mandali, offering daily astrological and religious guidance for devotees. This almanac helps align spiritual practices with cosmic rhythms, enhancing devotion and cultural heritage.</p>
+          <h2>Meaning and Purpose</h2>
+          <p>The term "Dinadarshi," meaning "daily guide," refers to a Hindu calendar or panchang that details tithi (lunar day), nakshatra (star), yoga, karana, and auspicious timings. Published by the Mandali, the Jayarama Dinadarshi supports devotees in Bengaluru and beyond by providing precise timings for rituals, prayers, and events like Ramanavami celebrations, ensuring alignment with Vedic traditions.</p>
+          <h2>Significance in Devotion</h2>
+          <p>The Dinadarshi is integral to the Mandali’s mission of fostering devotion to Lord Rama. It guides the scheduling of events like Ramayana discourses and music concerts, as seen during the 60th Ramanavami festival in April 2025. By offering data like Rahu Kalam (e.g., 3:00 PM–4:30 PM on April 22, 2025), it helps devotees avoid inauspicious periods and choose muhurtas for activities like puja or yagnas.</p>
+          <h2>Sample Panchang: April 22, 2025</h2>
+          <p>For Bengaluru (IST): <br>
+            <strong>Tithi</strong>: Krishna Ashtami (ends ~11:30 PM)<br>
+            <strong>Nakshatra</strong>: Shravana (6:45 AM–next day 8:00 AM)<br>
+            <strong>Yoga</strong>: Siddhi (4:20 AM–next day 5:10 AM)<br>
+            <strong>Karana</strong>: Kaulava (11:00 AM–11:30 PM)<br>
+            <strong>Sunrise/Sunset</strong>: 6:05 AM/6:35 PM<br>
+            <strong>Rahu Kalam</strong>: 3:00 PM–4:30 PM<br>
+            <strong>Abhijit Muhurta</strong>: 11:50 AM–12:30 PM<br>
+            This data aids in planning spiritual activities with precision.</p>
+          <h2>How to Use</h2>
+          <p>Devotees can consult the Jayarama Dinadarshi for daily worship, fasting (e.g., Ekadashi), or attending Mandali events. Available in print or digitally, it complements resources like *Srimad Ramayana Chitramanjari* and supports practices during festivals like Vaikunta Ekadashi. Check the Mandali’s website or contact us for the latest edition.</p>
+          <h2>Join the Tradition</h2>
+          <p>Explore the Jayarama Dinadarshi to deepen your spiritual journey. Visit Sri Jayarama Seva Mandali or access our online resources to stay connected with sacred timings and events throughout 2025!</p>
+        </div>
+      </div>
+     
+    </div>
+  </section>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      color: #333;
+      background: #f4f4f4;
+    }
+
+    .dinadarshi-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      margin-top: 80px;
+      padding: 10px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .dinadarshi-content {
+      flex: 1;
+      padding: 20px;
+      border-radius: 8px;
+      background: rgba(230, 243, 255, 0.9);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      max-width: 1000px;
+      gap: 20px;
+    }
+
+    .image-grid {
+      flex: 0 0 40%;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      width: 100%;
+    }
+
+    .text-content {
+      flex: 0 0 60%;
+      text-align: left;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+      color: #1a3c6d;
+    }
+
+    .intro {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    h2 {
+      font-size: 1.6em;
+      margin: 15px 0 10px;
+      color: #1a3c6d;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      opacity: 0;
+      animation: slideUp 1s ease-in-out forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.5s; }
+    .card:nth-child(2) { animation-delay: 0.7s; }
+    .card:nth-child(3) { animation-delay: 0.9s; }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .dinadarshi-img {
+      width: 100%;
+      height: auto;
+      max-height: 300px;
+      object-fit: contain;
+      border-radius: 5px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #27ae60;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.2em;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #219653;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsiveness */
+    @media (min-width: 1025px) {
+      .dinadarshi-content { padding: 30px; }
+      .content-wrapper { gap: 30px; max-width: 1100px; }
+      .image-grid { gap: 20px; }
+      .dinadarshi-img { max-height: 300px; }
+      .card { padding: 15px; }
+      h1 { font-size: 2.5em; }
+      .intro { font-size: 1.2em; }
+      p { font-size: 1.1em; }
+      h2 { font-size: 1.8em; }
+      .cta-button { font-size: 1.3em; }
+    }
+
+    @media (max-width: 768px) {
+      .content-wrapper { flex-direction: column; align-items: center; }
+      .image-grid { flex: unset; width: 100%; max-width: 500px; gap: 10px; }
+      .text-content { flex: unset; width: 100%; text-align: center; }
+      .dinadarshi-content { padding: 15px; }
+      .dinadarshi-img { max-height: 250px; }
+      .card { padding: 8px; }
+      h1 { font-size: 2em; }
+      .intro { font-size: 1em; }
+      p { font-size: 0.9em; }
+      h2 { font-size: 1.5em; }
+      .cta-button { font-size: 1.1em; padding: 8px 18px; }
+    }
+
+    @media (max-width: 480px) {
+      .dinadarshi-content { padding: 10px; }
+      .image-grid { gap: 5px; max-width: 90vw !important; }
+      .dinadarshi-img { max-height: 220px !important; max-width: 150% !important; width: 100%; height: auto; }
+      .card { padding: 3px; overflow: visible; }
+      .dinadarshi-section { padding: 5px; }
+      h1 { font-size: 1.6em; }
+      .intro { font-size: 0.8em; }
+      p { font-size: 0.8em; }
+      h2 { font-size: 1.3em; }
+      .cta-button { font-size: 0.9em; padding: 8px 15px; }
+    }
+  </style>
+
+<footer id="pq-footer">
+  <div class="pq-footer-style-1">
+    <div class="pq-footer-top">
+      <div class="pq-footer-bottom-list">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <div class="pq-footer-contact-vertical text-center mb-5">
+                
+
+                <div class="pq-footer-items d-flex justify-content-center align-items-start flex-column flex-md-row gap-4">
+                  <div class="pq-footer-item text-start">
+                    <i class="ti-location-pin"></i>
+                    <div class="pq-footer-items-info">
+                      <h4>Address</h4>
+                      <span> Sri Jayarama Seva Mandali(R), 492/A, Sri Jayarama Seva<br/>
+                         Mandli Road, 1st main, 8th block, Jayanagar,<br/>
+                         Banglore - 560070, India</span>
+                    </div>
+                  </div>
+
+                  <div class="pq-footer-item text-start">
+                      <i class="ti-email"></i>
+                      <div class="pq-footer-items-info">
+                        <h4>Email Us</h4>
+                        <a href="mailto:jayaramasevamandali@gmail.com"><span>jayaramasevamandali@gmail.com</span></a>
+                      </div>
+                    </div>
+
+                  <div class="pq-footer-item text-start">
+                    <i class="ti-mobile"></i>
+                    <div class="pq-footer-items-info">
+                      <h4>Contact Us</h4>
+                      <a href="tel:080 22445232"><span>080 22445232</span></a>
+                    </div>
+                  </div>
+
+                 
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Columns Section -->
+      <div class="container">
+  <!-- Wrapper for About + Services on large screen -->
+ 
+
+
+    <!-- Bottom bar -->
+    <div class="pq-copyright-footer">
+      <div class="container">
+        <div class="footer-row">
+          <div class="pq-footer-social">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item">
+                <a href="https://youtube.com/@srijayaramasevamandali">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <span class="pq-copyright">Designed by Bloom IT Solutions</span>
+        </div>
+      </div>
+    </div>
+    
+    
+</footer>
+
+<style>
+  @media (min-width: 992px) {
+    .pq-copyright-footer {
+      margin-top: 30px; /* adjust as needed */
+      
+    }
+    
+    .pq-footer-top {
+    padding-top: 30px; /* Adjust the value to your preference */
+  }
+
+  }
+  @media (max-width: 991.98px) {
+  .pq-footer-items .pq-footer-item:nth-child(2)
+   {
+    position: relative;
+    top: -30px;
+  }
+
+  .pq-footer-items .pq-footer-item:nth-child(3)
+   {
+    position: relative;
+    top: -60px;
+  }
+  .pq-copyright-footer
+  {
+   padding-bottom: 20px;
+  }
+}
+  
+  </style>
+
+
+</body>
+</html>

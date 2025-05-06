@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>V CHAKRA TOURS - Tailored Travel & Tour Packages for Every Adventurer</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="Explore the world with V CHAKRA TOURS! Offering customized travel and tour packages for all types of travelers. From exotic getaways to cultural explorations, discover the perfect adventure today." />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #f4b400;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .brand-name {
+            font-weight: bold;
+            margin-left: 10px;
+            font-size: 20px;
+            color: #000;
+        }
+
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: normal;
+            background: none;
+            border: none;
+            outline: none;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 130px auto 40px;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: white;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+            }
+
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+        }
+
+        
+  /* Ensure nav-links and dropdowns work on mobile */
+  @media (max-width: 768px) {
+      .nav-links {
+          display: none;
+      }
+
+      .nav-links.active {
+          display: block; /* Show main menu when active */
+      }
+
+      .dropdown-content {
+          display: none; /* Hide dropdown by default */
+      }
+
+      .dropdown.active .dropdown-content {
+          display: block; /* Show dropdown when active */
+      }
+
+      .sub-dropdown-content {
+          display: none; /* Hide sub-dropdown by default */
+      }
+  }
+</style>
+   
+</head>
+<body>
+    <header>
+        <div class="header">
+        <nav class="navbar">
+          <div class="logo" style="display: flex; align-items: center;">
+            <img src="images/l-2.png" style="width: 80px; height: 80px; margin-left: 3px;background: linear-gradient( #f7971e, #ffd200);
+            " alt="SJRSM Logo">
+            <span class="brand-name" style="font-weight: bold; font-size: 24px; margin-left: 10px; font-family: sans-serif;">
+              <span style="color: #000000;">SRI JAYARAMA SEVA MANDALI</span>
+            </span>
+          </div>
+          
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html"><h4>Home</h4></a></li>
+                <li><a href="About_us.html"><h4>About Us</h4></a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle"><h4>Events</h4></a> <!-- Fixed typo: changed <h3> to <h4> -->
+                    <div class="dropdown-content">
+                       
+                        <a href="Upcoming Pooja Dates.html">Upcoming Pooja Dates</a>
+
+                        <a href="javascript:void(0);" class="toggle-sub" data-target="days4">Previous Events <i class="fa-solid fa-angle-right"></i></a>
+                        <div class="sub-dropdown-content" id="days4">
+                            <a href="koti.html">Terah Koti Ramanama Lekhana Yagna</a>
+                            <a href="Upanyasa.html">Upanyasa</a>
+                            <a href="ramayana.html">Ramayana Spardhe</a>
+                            <a href="vaikunta.html">Vaikunta Ekadashi</a>
+                            <a href="Dinadarshi.html">Jayarama Dinadarshi</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="Book-seva.html"><h4>Seva</h4></a></li>
+         
+                <li><a href="gallery.html"><h4>Gallery</h4></a></li>
+                <li><a href="Contact.html"><h4>Contact Us</h4></a></li>
+                <li><a href="login.html"><h4>Login</h4></a></li>
+            </ul>
+            
+        </nav>
+        </div>
+    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+        <script>
+           document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+    
+        // Check if elements exist before adding event listeners
+        if (menuToggle && navLinks) {
+            // Toggle menu on menu button click
+            menuToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                navLinks.classList.toggle('active');
+            });
+    
+            menuToggle.addEventListener('click', function(e) {
+                console.log('Menu toggle clicked'); // Debugging log
+                e.preventDefault();
+                navLinks.classList.toggle('active');
+            });
+    
+            // Handle dropdown toggle click on mobile (screens ≤ 768px)
+            document.querySelectorAll('.dropdown .dropdown-toggle').forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        this.closest('.dropdown').classList.toggle('active');
+                    }
+                });
+            });
+    
+            // Handle sub-dropdown toggles
+            document.querySelectorAll('.toggle-sub').forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    const targetDropdown = document.getElementById(targetId);
+    
+                    // Close other open submenus
+                    document.querySelectorAll('.sub-dropdown-content').forEach(menu => {
+                        if (menu !== targetDropdown) menu.style.display = 'none';
+                    });
+                    document.querySelectorAll('.toggle-sub').forEach(link => {
+                        if (link !== this) link.classList.remove('active');
+                    });
+    
+                    // Toggle current submenu
+                    if (targetDropdown && targetDropdown.style.display === 'block') {
+                        targetDropdown.style.display = 'none';
+                        this.classList.remove('active');
+                    } else if (targetDropdown) {
+                        targetDropdown.style.display = 'block';
+                        this.classList.add('active');
+                    }
+                });
+            });
+    
+            // Close menu and dropdowns when clicking outside on mobile
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                        document.querySelectorAll('.dropdown').forEach(dropdown => {
+                            dropdown.classList.remove('active');
+                        });
+                        document.querySelectorAll('.sub-dropdown-content').forEach(menu => {
+                            menu.style.display = 'none';
+                        });
+                        document.querySelectorAll('.toggle-sub').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                    }
+                }
+            });
+        } else {
+            console.log('Error: .menu-toggle or .nav-links not found in the DOM');
+        }
+    });
+    
+        </script>
+    </header>
+    <div class="container">
+        <h2>Register</h2>
+        <form id="registrationForm" action="#" method="post">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Enter your name" required>
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+
+            <label>Mobile Number</label>
+            <input type="text" name="mobile" placeholder="Enter your mobile number" required>
+
+            <label>User ID</label>
+            <input type="text" name="user_id" placeholder="Your unique User ID will be generated" readonly>
+
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit" class="submit-btn">Submit</button>
+
+            <div class="login-link">
+                Already have an account? <a href="login.html">Login</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Function to generate a random ID (for both User ID and Referral ID)
+        function generateRandomId() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let id = '';
+            for (let i = 0; i < 8; i++) {
+                id += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return id;
+        }
+
+        // Handle form submission
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Generate a new user ID
+            const userId = generateRandomId();
+            this.querySelector('input[name="user_id"]').value = userId;
+
+            // Generate a random referral ID
+            const referralId = generateRandomId();
+
+            // Display both User ID and Referral ID to the user
+            alert(`Registration successful! Your User ID is: ${userId}\nYour Referral ID is: ${referralId}\nYou can use your User ID to login.`);
+
+            // Store user data in localStorage (for demo purposes)
+            const formData = new FormData(this);
+            const userData = {
+                userId: userId,
+                password: formData.get('password')
+            };
+            localStorage.setItem('registeredUser', JSON.stringify(userData));
+
+            // Reset the form after submission
+            this.reset();
+        });
+
+        // Clear the default user ID on page load to avoid confusion
+        document.querySelector('input[name="user_id"]').value = '';
+    </script>
+
+    <script src="js/index.js"></script>
+</body>
+</html>

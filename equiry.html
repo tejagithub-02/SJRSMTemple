@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seva-Booking Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #fff8e1, #ffe0b2);
+            color: #333;
+        }
+        .enquiry-container {
+            max-width: 100%;
+            width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #fff3e0, #ffebee);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        h2 {
+            text-align: center;
+            color: red;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 1em;
+            color: red;
+            margin-bottom: 6px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 0.95em;
+            background: #fff;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            box-sizing: border-box;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #f57f17;
+            box-shadow: 0 0 5px rgba(245, 127, 23, 0.3);
+            outline: none;
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .payment-section {
+            margin-top: 15px;
+        }
+        .payment-section label {
+            font-size: 1em;
+            color: red;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .payment-method {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        .payment-option {
+            flex: 1 1 48%;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s, border-color 0.3s;
+            font-size: 0.9em;
+        }
+        .payment-option:hover,
+        .payment-option.active {
+            background: linear-gradient(45deg, #f57f17, #ffca28);
+            border-color: #e65100;
+            color: #fff;
+        }
+        .payment-option i {
+            margin-right: 6px;
+        }
+        .pay-button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #f57f17, #ffca28);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .pay-button:hover {
+            background: linear-gradient(45deg, #e65100, #ffb300);
+        }
+        .pay-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .back-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            background: linear-gradient(45deg, red, #c62828);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s;
+            box-sizing: border-box;
+        }
+        .back-button:hover {
+            background: linear-gradient(45deg, #ad1457, #8e0000);
+        }
+
+        /* Mobile View Adjustments */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .enquiry-container {
+                padding: 15px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            .form-group label {
+                font-size: 0.9em;
+            }
+            .form-group input,
+            .form-group textarea {
+                font-size: 0.9em;
+                padding: 8px;
+            }
+            .payment-option {
+                flex: 1 1 100%;
+                font-size: 0.85em;
+                padding: 8px;
+            }
+            .pay-button {
+                font-size: 0.85em;
+                padding: 8px;
+            }
+            .back-button {
+                font-size: 0.85em;
+                padding: 8px;
+                margin-top: 12px;
+            }
+        }
+
+        /* Extra Small Screens (e.g., <400px) */
+        @media (max-width: 400px) {
+            h2 {
+                font-size: 1.3em;
+            }
+            .form-group label {
+                font-size: 0.85em;
+            }
+            .form-group input,
+            .form-group textarea {
+                font-size: 0.85em;
+            }
+            .payment-option {
+                font-size: 0.8em;
+            }
+            .pay-button {
+                font-size: 0.8em;
+                padding: 7px;
+            }
+            .back-button {
+                font-size: 0.8em;
+                padding: 7px;
+                margin-top: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="enquiry-container">
+        <h2>Book Seva</h2>
+        <form id="enquiryForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="Enter your state" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Additional Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Enter any special requests"></textarea>
+            </div>
+            <div class="payment-section">
+                <label>Select Payment Method</label>
+                <div class="payment-method">
+                    <div class="payment-option" data-method="credit-card">
+                        <i class="fas fa-credit-card"></i>Credit Card
+                    </div>
+                    <div class="payment-option" data-method="upi">
+                        <i class="fas fa-mobile-alt"></i>UPI
+                    </div>
+                    <div class="payment-option" data-method="paypal">
+                        <i class="fab fa-paypal"></i>PayPal
+                    </div>
+                    <div class="payment-option" data-method="bank-transfer">
+                        <i class="fas fa-university"></i>Bank Transfer
+                    </div>
+                </div>
+                <button type="button" class="pay-button" disabled>Pay Now</button>
+                <a href="Book-seva.html" class="back-button">Back</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('enquiryForm');
+            const payButton = form.querySelector('.pay-button');
+            const paymentOptions = form.querySelectorAll('.payment-option');
+            const inputs = form.querySelectorAll('input[required]');
+
+            // Handle payment method selection
+            paymentOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    paymentOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    validateForm();
+                });
+            });
+
+            // Validate form inputs
+            inputs.forEach(input => {
+                input.addEventListener('input', validateForm);
+            });
+
+            function validateForm() {
+                const allFilled = Array.from(inputs).every(input => input.value.trim() !== '');
+                const paymentSelected = form.querySelector('.payment-option.active');
+                payButton.disabled = !(allFilled && paymentSelected);
+            }
+
+            // Handle Pay Now click (placeholder)
+            payButton.addEventListener('click', function() {
+                if (!payButton.disabled) {
+                    const selectedMethod = form.querySelector('.payment-option.active').dataset.method;
+                    alert(`Proceeding to payment via ${selectedMethod}. (This is a placeholder action.)`);
+                    // In a real scenario, redirect to payment gateway based on selectedMethod
+                }
+            });
+        });
+    </script>
+</body>
+</html>

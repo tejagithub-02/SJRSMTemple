@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Seva</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="Explore the world with V CHAKRA TOURS! Offering customized travel and tour packages for all types of travelers. From exotic getaways to cultural explorations, discover the perfect adventure today." />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px 0;
+            background: linear-gradient(135deg, #fff8e1, #ffe0b2);
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #b71c1c;
+            font-size: 3em;
+            margin: 40px 0;
+            margin-top: 100px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #d32f2f;
+            font-size: 2em;
+            margin: 30px 0 20px;
+        }
+        .general-seva-container,
+        .event-seva-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .general-seva-container {
+            margin-top: 50px;
+        }
+        .event-seva-container {
+            margin-top: 30px;
+        }
+        .seva-card {
+            background: linear-gradient(135deg, #fffde7, #fff5e1);
+            border: 1px solid #ffb300;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        .seva-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .seva-card h3 {
+            margin: 0 0 12px;
+            color: #d32f2f;
+            font-size: 1.6em;
+        }
+        .seva-card p {
+            margin: 0 0 20px;
+            color: #444;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+        .seva-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        .book-button {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(45deg, #ef6c00, #ffb300);
+            color: #fff;
+            padding: 14px;
+            border: none;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+        .book-button:hover {
+            background: linear-gradient(45deg, #d84315, #ffa000);
+        }
+        #pq-footer {
+            color: #fff;
+            padding: 0;
+            margin-top: 100px;
+            margin-bottom: -20px;
+        }
+        .pq-footer-top {
+            padding-top: 30px;
+        }
+        .pq-footer-contact-vertical {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .pq-footer-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        .pq-footer-item {
+            display: flex;
+            align-items: flex-start;
+            min-width: 250px;
+        }
+        .pq-footer-item i {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #ffca28;
+        }
+        .pq-footer-items-info h4 {
+            color: #fff;
+            margin: 0 0 10px;
+        }
+        .pq-footer-items-info span,
+        .pq-footer-items-info a {
+            color: #ffebee;
+            text-decoration: none;
+        }
+        .pq-footer-items-info a:hover {
+            color: #ffca28;
+        }
+        .pq-copyright-footer {
+            text-align: center;
+            padding: 0;
+            margin-top: 30px;
+            padding-bottom: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .pq-footer-social ul {
+            padding: 0;
+            margin: 0 0 0;
+        }
+        .pq-footer-social i {
+            color: #fff;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        .pq-footer-social i:hover {
+            color: #ffca28;
+        }
+        .pq-copyright {
+            color: #ffebee;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .nav-links.active {
+                display: block;
+            }
+            .dropdown-content {
+                display: none;
+            }
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            .sub-dropdown-content {
+                display: none;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            .general-seva-container,
+            .event-seva-container {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            .seva-card {
+                padding: 20px;
+            }
+            .seva-card h3 {
+                font-size: 1.4em;
+            }
+            .seva-card p {
+                font-size: 1em;
+            }
+            .seva-image {
+                height: 120px;
+            }
+            .book-button {
+                padding: 12px;
+                font-size: 0.9em;
+            }
+            .pq-footer-items .pq-footer-item {
+                min-width: 200px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            .general-seva-container,
+            .event-seva-container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            .seva-card {
+                padding: 15px;
+            }
+            .seva-card h3 {
+                font-size: 1.2em;
+            }
+            .seva-card p {
+                font-size: 0.95em;
+            }
+            .seva-image {
+                height: 100px;
+            }
+            .book-button {
+                padding: 10px;
+                font-size: 0.85em;
+            }
+            .pq-footer-items .pq-footer-item {
+                min-width: 100%;
+            }
+        }
+        @media (max-width: 991.98px) {
+            .pq-footer-items .pq-footer-item:nth-child(2),
+            .pq-footer-items .pq-footer-item:nth-child(3) {
+                position: static;
+            }
+            .pq-copyright-footer {
+                padding-bottom: 20px;
+            }
+        }
+        @media (min-width: 992px) {
+            .pq-copyright-footer {
+                margin-top: 30px;
+                padding-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <nav class="navbar">
+                <div class="logo" style="display: flex; align-items: center;">
+                    <img src="images/l-2.png" style="width: 80px; height: 80px; margin-left: 3px; background: linear-gradient(#f7971e, #ffd200);" alt="SJRSM Logo">
+                    <span class="brand-name" style="font-weight: bold; font-size: 24px; margin-left: 10px; font-family: sans-serif;">
+                        <span style="color: #000000;">SRI JAYARAMA SEVA MANDALI</span>
+                    </span>
+                </div>
+                <div class="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html"><h4>Home</h4></a></li>
+                    <li><a href="About_us.html"><h4>About Us</h4></a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle"><h4>Events</h4></a>
+                        <div class="dropdown-content">
+                            <a href="Upcoming Pooja Dates.html">Upcoming Pooja Dates</a>
+                            <a href="javascript:void(0);" class="toggle-sub" data-target="days4">Previous Events <i class="fa-solid fa-angle-right"></i></a>
+                            <div class="sub-dropdown-content" id="days4">
+                                <a href="koti.html">Terah Koti Ramanama Lekhana Yagna</a>
+                                <a href="Upanyasa.html">Upanyasa</a>
+                                <a href="ramayana.html">Ramayana Spardhe</a>
+                                <a href="vaikunta.html">Vaikunta Ekadashi</a>
+                                <a href="Dinadarshi.html">Jayarama Dinadarshi</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="#"><h4>Seva</h4></a></li>
+                    <li><a href="gallery.html"><h4>Gallery</h4></a></li>
+                    <li><a href="Contact.html"><h4>Contact Us</h4></a></li>
+                    <li><a href="login.html"><h4>Login</h4></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <h1>Book Seva</h1>
+
+    <!-- General Sevas Section -->
+    <h2>General Sevas</h2>
+    <div class="general-seva-container">
+        <!-- Seva Subsection -->
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="archane" src="https://via.placeholder.com/300x150?text=Archane" alt="Archane Image">
+            <h3>Archane</h3>
+            <p>Archane - ₹10</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="abhisheka-sunday" src="https://via.placeholder.com/300x150?text=Abhisheka+Sunday" alt="Abhisheka Sunday Image">
+            <h3>Abhisheka (Sunday to Friday)</h3>
+            <p>Abhisheka (Sunday to Friday) - ₹150</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="abhisheka-saturday" src="https://via.placeholder.com/300x150?text=Abhisheka+Saturday" alt="Abhisheka Saturday Image">
+            <h3>Abhisheka (Saturday only)</h3>
+            <p>Abhisheka (Saturday only) - ₹250</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="alankara-ganesha" src="https://via.placeholder.com/300x150?text=Alankara+Ganesha" alt="Alankara Ganesha Image">
+            <h3>Alankara – Sri Ganesha / Butter Alankara – Sri Ganapathi</h3>
+            <p>Alankara – Sri Ganesha / Butter Alankara – Sri Ganapathi - ₹1,500</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="alankara-seetha-rama" src="https://via.placeholder.com/300x150?text=Alankara+Seetha+Rama" alt="Alankara Seetha Rama Image">
+            <h3>Alankara – Sri Seetha, Rama, Lakshmana & Anjaneya</h3>
+            <p>Alankara – Sri Seetha, Rama, Lakshmana & Anjaneya - ₹5,000</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="butter-alankara-seetha-rama" src="https://via.placeholder.com/300x150?text=Butter WAlankara+Seetha+Rama" alt="Butter Alankara Seetha Rama Image">
+            <h3>Butter Alankara – Sri Seetha, Rama, Lakshmana & Anjaneya</h3>
+            <p>Butter Alankara – Sri Seetha, Rama, Lakshmana & Anjaneya - ₹2,000</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="nithya-prasada" src="https://via.placeholder.com/300x150?text=Nithya+Prasada" alt="Nithya Prasada Image">
+            <h3>Nithya Prasada Seve</h3>
+            <p>Nithya Prasada Seve - ₹2,000</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="shashwatha-nithya-prasada" src="https://via.placeholder.com/300x150?text=Shashwatha+Nithya+Prasada" alt="Shashwatha Nithya Prasada Image">
+            <h3>Shashwatha Nithya Prasada Seve</h3>
+            <p>Shashwatha Nithya Prasada Seve - ₹25,000</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="samoohika-satyanarayana" src="https://via.placeholder.com/300x150?text=Samoohika+Satyanarayana" alt="Samoohika Satyanarayana Image">
+            <h3>Samoohika Sri Satyanarayana Pooja</h3>
+            <p>Samoohika Sri Satyanarayana Pooja - ₹500</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="samoohika-satyanarayana-yearly" src="https://via.placeholder.com/300x150?text=Samoohika+Satyanarayana+Yearly" alt="Samoohika Satyanarayana Yearly Image">
+            <h3>Samoohika Sri Satyanarayana Pooja (Yearly)</h3>
+            <p>Samoohika Sri Satyanarayana Pooja (Yearly) - ₹600</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="samoohika-sankashtahara" src="https://via.placeholder.com/300x150?text=Samoohika+Sankashtahara" alt="Samoohika Sankashtahara Image">
+            <h3>Samoohika Sri Sankashtahara Ganapathi Vratha</h3>
+            <p>Samoohika Sri Sankashtahara Ganapathi Vratha - ₹500</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="samoohika-sankashtahara-yearly" src="https://via.placeholder.com/300x150?text=Samoohika+Sankashtahara+Yearly" alt="Samoohika Sankashtahara Yearly Image">
+            <h3>Samoohika Sri Sankashtahara Ganapathi Vratha (Yearly)</h3>
+            <p>Samoohika Sri Sankashtahara Ganapathi Vratha (Yearly) - ₹600</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="samoohika-navagraha" src="https://via.placeholder.com/300x150?text=Samoohika+Navagraha" alt="Samoohika Navagraha Image">
+            <h3>Samoohika Navagraha Homa (Amavasyese)</h3>
+            <p>Samoohika Navagraha Homa (Amavasyese) - ₹500</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="samoohika-navagraha-yearly" src="https://via.placeholder.com/300x150?text=Samoohika+Navagraha+Yearly" alt="Samoohika Navagraha Yearly Image">
+            <h3>Samoohika Navagraha Homa (Amavasyese) (Yearly)</h3>
+            <p>Samoohika Navagraha Homa (Amavasyese) (Yearly) - ₹600</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="separate-satyanarayana" src="https://via.placeholder.com/300x150?text=Separate+Satyanarayana" alt="Separate Satyanarayana Image">
+            <h3>Separate Sri Satyanarayana Pooja (Individual)</h3>
+            <p>Separate Sri Satyanarayana Pooja (Individual) - ₹2,500</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <!-- Utsava - Prakarakoothsava Subsection -->
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="prakarakoothsava-sankalpa" src="https://via.placeholder.com/300x150?text=Prakarakoothsava+Sankalpa" alt="Prakarakoothsava Sankalpa Image">
+            <h3>Prakarakoothsava Sankalpa</h3>
+            <p>Prakarakoothsava Sankalpa - ₹100</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="prakarakoothsava-prasada" src="https://via.placeholder.com/300x150?text=Prakarakoothsava+Prasada" alt="Prakarakoothsava Prasada Image">
+            <h3>Prakarakoothsava Prasada Seve</h3>
+            <p>Prakarakoothsava Prasada Seve - ₹500</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="prakarakoothsava-hoovina" src="https://via.placeholder.com/300x150?text=Prakarakoothsava+Hoovina" alt="Prakarakoothsava Hoovina Image">
+            <h3>Prakarakoothsava Hoovina Seve</h3>
+            <p>Prakarakoothsava Hoovina Seve - ₹1,000</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="prakarakoothsava" src="https://via.placeholder.com/300x150?text=Prakarakoothsava" alt="Prakarakoothsava Image">
+            <h3>Prakarakoothsava – Prakarakoothsava</h3>
+            <p>Prakarakoothsava – Prakarakoothsava - ₹2,000</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="padauka-pooje" src="https://via.placeholder.com/300x150?text=Padauka+Pooje" alt="Padauka Pooje Image">
+            <h3>Padauka Pooje</h3>
+            <p>Padauka Pooje - ₹2,000</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="separate-seetha-kalyana" src="https://via.placeholder.com/300x150?text=Separate+Seetha+Kalyana" alt="Separate Seetha Kalyana Image">
+            <h3>Separate Seetha Kalyana</h3>
+            <p>Separate Seetha Kalyana - ₹25,000</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+    </div>
+
+    <!-- Event-Specific Sevas Section -->
+    <h2>Event-Specific Sevas</h2>
+    <div class="event-seva-container">
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="event-20250531" src="https://via.placeholder.com/300x150?text=Pratishta+Vardhanti" alt="Pratishta Vardhanti Image">
+            <h3>31.05.2025 (Saturday)</h3>
+            <p>Chaitra Krishna Trayodashi: 43rd Annual Pratishta Vardhanti Mahotsava</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="event-20250822" src="https://via.placeholder.com/300x150?text=Lakshmi+Pooja" alt="Lakshmi Pooja Image">
+            <h3>22.08.2025 (Friday)</h3>
+            <p>Simha Masa Puja, Samoohika Sri Lakshmi Pooja</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="event-20251202" src="https://via.placeholder.com/300x150?text=Jayaramadevara+Aradhana" alt="Jayaramadevara Aradhana Image">
+            <h3>02.12.2025 (Tuesday)</h3>
+            <p>Sri Jayaramadevara Aradhana</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="event-20251230" src="https://via.placeholder.com/300x150?text=Vadiraja+Aradhana" alt="Vadiraja Aradhana Image">
+            <h3>30.12.2025 (Tuesday)</h3>
+            <p>Sri Vadiraja Tirtha Aradhana, Sri Purandara Dasa Aradhana</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="event-20260107" src="https://via.placeholder.com/300x150?text=Raghavendra+Aradhana" alt="Raghavendra Aradhana Image">
+            <h3>07.01.2026 (Wednesday)</h3>
+            <p>Sri Raghavendra Swamy Aradhana, Sri Vedavyasa Jayanthi, Sri Madhwacharya Jayanthi, Samoohika Sri Vishnusahasranama Parayana</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="event-20260319" src="https://via.placeholder.com/300x150?text=Madhwa+Navami" alt="Madhwa Navami Image">
+            <h3>19.03.2026 (Thursday)</h3>
+            <p>Sri Madhwa Navami, Special Poojas and Programs</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+        <div class="seva-card">
+            <img class="seva-image" data-image-id="event-20260326" src="https://via.placeholder.com/300x150?text=Ramanavami" alt="Ramanavami Image">
+            <h3>26.03.2026 (Thursday)</h3>
+            <p>Sri Ramanavami 2026, Sri Jayaramadevara Rathotsava</p>
+            <a href="enquiry.html" class="book-button">Book Seva</a>
+        </div>
+    </div>
+
+    <footer id="pq-footer">
+        <div class="pq-footer-style-1">
+            <div class="pq-footer-top">
+                <div class="pq-footer-bottom-list">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-12">
+                                <div class="pq-footer-contact-vertical text-center mb-5">
+                                    <div class="pq-footer-items d-flex justify-content-center align-items-start flex-column flex-md-row gap-4">
+                                        <div class="pq-footer-item text-start">
+                                            <i class="ti-location-pin"></i>
+                                            <div class="pq-footer-items-info">
+                                                <h4>Address</h4>
+                                                <span>Sri Jayarama Seva Mandali(R), 492/A, Sri Jayarama Seva<br/>
+                                                    Mandli Road, 1st main, 8th block, Jayanagar,<br/>
+                                                    Banglore - 560070, India</span>
+                                            </div>
+                                        </div>
+                                        <div class="pq-footer-item text-start">
+                                            <i class="ti-email"></i>
+                                            <div class="pq-footer-items-info">
+                                                <h4>Email Us</h4>
+                                                <a href="mailto:jayaramasevamandali@gmail.com"><span>jayaramasevamandali@gmail.com</span></a>
+                                            </div>
+                                        </div>
+                                        <div class="pq-footer-item text-start">
+                                            <i class="ti-mobile"></i>
+                                            <div class="pq-footer-items-info">
+                                                <h4>Contact Us</h4>
+                                                <a href="tel:08022445232"><span>080 22445232</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pq-copyright-footer">
+                <div class="container">
+                    <div class="footer-row">
+                        <div class="pq-footer-social">
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item">
+                                    <a href="https://youtube.com/@srijayaramasevamandali">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <span class="pq-copyright">Designed by Bloom IT Solutions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Menu toggle clicked');
+                    navLinks.classList.toggle('active');
+                });
+                document.querySelectorAll('.dropdown .dropdown-toggle').forEach(toggle => {
+                    toggle.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 768) {
+                            e.preventDefault();
+                            this.closest('.dropdown').classList.toggle('active');
+                        }
+                    });
+                });
+                document.querySelectorAll('.toggle-sub').forEach(toggle => {
+                    toggle.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        console.log('Previous Events clicked');
+                        const targetId = this.getAttribute('data-target');
+                        const targetDropdown = document.getElementById(targetId);
+                        console.log('Target ID:', targetId, 'Target Dropdown:', targetDropdown);
+                        document.querySelectorAll('.sub-dropdown-content').forEach(menu => {
+                            if (menu !== targetDropdown) menu.style.display = 'none';
+                        });
+                        document.querySelectorAll('.toggle-sub').forEach(link => {
+                            if (link !== this) link.classList.remove('active');
+                        });
+                        if (targetDropdown && targetDropdown.style.display === 'block') {
+                            targetDropdown.style.display = 'none';
+                            this.classList.remove('active');
+                        } else if (targetDropdown) {
+                            targetDropdown.style.display = 'block';
+                            this.classList.add('active');
+                        } else {
+                            console.error('Target dropdown not found for ID:', targetId);
+                        }
+                    });
+                });
+                document.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                            navLinks.classList.remove('active');
+                            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                                dropdown.classList.remove('active');
+                            });
+                            document.querySelectorAll('.sub-dropdown-content').forEach(menu => {
+                                menu.style.display = 'none';
+                            });
+                            document.querySelectorAll('.toggle-sub').forEach(link => {
+                                link.classList.remove('active');
+                            });
+                        }
+                    }
+                });
+            } else {
+                console.log('Error: .menu-toggle or .nav-links not found in the DOM');
+            }
+        });
+    </script>
+</body>
+</html>

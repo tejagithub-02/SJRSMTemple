@@ -1,0 +1,1530 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+   
+}
+img{
+  border-radius: 0px;
+}
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+  background-image: url('https://i.pinimg.com/736x/38/0c/ed/380cedec75d56b3862443b1c745601d1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+
+header {
+  background: white;
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+
+
+/*Header*/
+/* This gives full-width gradient */
+.header {
+  width: 100%;
+  background: linear-gradient( #f7971e);
+}
+
+/* This keeps your nav content centered and neat */
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent; /* Make sure this is transparent */
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
+}
+
+.brand-name {
+  margin-left: 10px; /* Space between logo and text */
+  font-size: 24px; /* Adjust size as needed */
+  font-weight: bold; /* Make it stand out */
+  color: #333; /* Match navbar text color */
+}
+
+/* Base Styles */
+/* Base Styles */
+
+/* Base Styles */
+.menu-toggle {
+  display: none; /* Hidden by default on desktop */
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.nav-links {
+  display: flex; /* Default flex layout for desktop */
+  list-style: none;
+  gap: 30px;
+  padding: 0;
+  margin-right: -40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+}
+
+.nav-links a:hover {
+  color:#e65c00;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: orange;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 100;
+  min-width: 160px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 20px;
+  white-space: nowrap;
+  color: #333;
+}
+
+.dropdown-content a:hover {
+  background: orange;
+  color: #ff6600;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* Show dropdown on hover for desktop */
+}
+
+.sub-dropdown-content {
+  display: none;
+  background-color: #fff;
+  border-left: 2px solid orange;
+  padding-left: 15px;
+  margin-top: 5px;
+}
+
+.sub-dropdown-content a {
+  padding: 8px 16px;
+  display: block;
+  color: #333;
+}
+
+.sub-dropdown-content a:hover {
+  background-color: #f5f5f5;
+  color: orange;
+}
+
+/* Optional: highlight active toggle */
+.toggle-sub.active {
+  color: orange;
+  font-weight: bold;
+}
+
+.contact {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.contact a {
+  text-decoration: none;
+  color: black;
+  margin-left: 5px;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+  color: orange;
+}
+
+/* Media Query for Small Screens (Mobile) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  
+
+  .menu-toggle {
+    display: block; /* Show toggle button on mobile */
+  }
+
+  .nav-links {
+    display: none; /* Hidden by default on mobile */
+    position: absolute;
+    top: 100%; /* Start just below navbar */
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+    margin: 0;
+    flex-direction: column;
+    z-index: 1000; /* Ensure it’s above other content */
+  }
+
+  .nav-links.active {
+    display: flex; /* Show when active, maintain flex for layout */
+    flex-direction: column; /* Stack items vertically */
+    top: 100px; /* Move down 80px to avoid covering the logo */
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    padding: 10px;
+    display: block;
+    width: 100%;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-content {
+    position: static; /* No absolute positioning on mobile */
+    display: none; /* Hidden by default */
+    width: 100%;
+    background-color: #f9f9f9;
+    box-shadow: none; /* Remove shadow for mobile */
+    border-radius: 0; /* Remove rounding for mobile */
+    padding: 0;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block; /* Show when dropdown is active */
+  }
+
+  .sub-dropdown-content {
+    position: static; /* No absolute positioning on mobile */
+    display: none; /* Hidden by default */
+    width: 100%;
+    background-color: #f0f0f0;
+    padding-left: 20px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .toggle-sub.active + .sub-dropdown-content {
+    display: block; /* Show sub-dropdown when toggle is active */
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none; /* Disable hover on mobile, use click instead */
+  }
+
+  .contact {
+    display: none; /* Hide contact on mobile */
+  }
+
+  .logo img {
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+  }
+
+  .brand-name {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+}
+
+/* Extra Small Screens (e.g., phones) */
+@media (max-width: 480px) {
+  .header {
+    height: 70px; /* Slightly smaller for very small devices */
+  }
+  .nav-links.active a {
+     /* Less left and right padding */
+    padding-left: -20px;
+  }
+
+  .nav-links.active {
+    top: 70px; /* Match with header height */
+
+    background-color: #f5e1ce !important; /* ✅ Add background */
+   
+  }
+
+  .navbar {
+    padding: 10px 12px; /* Slightly more padding for very small screens */
+  }
+
+  .logo img {
+    width: 50px !important; /* Smaller logo for very small screens */
+    height: 50px !important;
+    margin-left: 0 !important; /* Ensure no negative margin */
+  }
+
+  .brand-name {
+    font-size: 16px !important; /* Smaller font size for very small screens */
+    margin-left: 5px !important;
+  }
+
+  /* Ensure logo and brand name are not pushed out of view */
+  .logo {
+    flex-shrink: 0; /* Prevent logo from shrinking too much */
+    max-width: 80%; /* Limit width to avoid overflow */
+  }
+}
+
+/* Move logo left on big screens */
+@media (min-width: 769px) {
+  .logo img {
+    margin-left: -150px; /* or use -10px if you want it more left */
+  }
+
+}
+
+
+
+
+/*banner*/
+
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 125%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: 0;
+  overflow: hidden; /* Crops excess image */
+
+}
+
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 125%; /* Slightly wider than container on large screens */
+  height: 100%;
+  object-fit: cover; /* Ensures image fills area */
+  z-index: 0;
+  border-radius: 5px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-bottom: 30px; /* Added padding for small screens */
+}
+
+#p1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 100px 0 0 0;
+}
+
+#p2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 10px 0 100px 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .hero {
+      height: 60vh;
+  }
+
+  .hero img {
+      width: 100%; /* Fits perfectly on smaller screens */
+      height: 100%;
+  }
+
+  .hero-content {
+    padding: 0px; /* Reduced padding to move content up on small screens */
+  }
+
+  #p1 {
+      font-size: 18px;
+  }
+
+  #p2 {
+      font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+      height: 50vh;
+  }
+
+  .hero img {
+      width: 100%;
+      height: 100%;
+  }
+
+  .hero-content {
+    padding: 10px; /* Further reduced padding for very small screens */
+  }
+
+  #p1 {
+      font-size: 16px;
+  }
+
+  #p2 {
+      font-size: 20px;
+  }
+
+  .hero-content {
+      padding: 15px; /* Adjusted padding for very small screens */
+  }
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    margin-top: 20px; /* Moves the content down a little on big screens */
+  }
+}
+
+@media (min-width: 769px) {
+  .hero-content {
+    margin-top: 50px; /* Moves the content down a little on big screens */
+  }
+}
+
+/*card*/
+/* card content */
+
+
+.trending-section {
+  width: 90%;
+  margin: 40px auto;
+  text-align: left;
+}
+
+.trending-section .trendy {
+  font-size: xx-large;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.trending-section .trendy_2 {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.package {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.3s ease;
+}
+
+.package:hover {
+  transform: translateY(-5px);
+}
+
+.package img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.package-info{
+  height: 100px;
+}
+.days{
+  display: flex;
+  justify-content: space-between;
+  padding:20px 10px 10px 10px;
+}
+.days .city{
+  color:black;
+}
+.price a{
+  text-decoration: none;
+  color:black
+}
+.package-info .price{
+  font-size: large;
+  color: black;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.badge {
+  position: absolute;
+  background: #f39c12;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  top: 20px;
+  left: 20px;
+}
+
+.explore-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+  text-align: left;
+}
+
+.explore-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: #f39c12; 
+}
+
+.explore-section p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+
+.south-india-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.south-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.south-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.south-card:hover {
+  transform: translateY(-5px);
+}
+
+.south-card p {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+.south-card a{
+  color:white;
+  text-decoration: none;
+}
+.south-card a:hover{
+  text-decoration: underline;
+  color: #e6821a;
+}
+.wide-card {
+  grid-column: span 3; 
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  #south {
+    margin-top: 40px; /* You can adjust this value */
+  }
+
+  .explore-section h2 {
+    font-size: 24px; /* Optional: smaller heading for mobile */
+    text-align: center;
+  }
+
+  .explore-section p {
+    font-size: 14px; /* Optional: adjust text size */
+    text-align: center;
+  }
+
+  .south-india-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .south-card img {
+    width: 100%; /* Responsive images */
+    height: auto;
+  }
+
+  .south-card p {
+    text-align: center;
+  }
+}
+
+
+/*   Explore the Spiritual side of India  */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.right {
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.right h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.right h2 span {
+  color: orange;
+}
+
+.spri_package {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 25px; /* Increased gap for better spacing */
+  margin-top: 20px;
+  max-width: 1000px; /* Increased width for larger images */
+  width: 100%; /* Takes full available width up to max */
+}
+
+.spri_package div {
+  position: relative;
+  border-radius: 10px; /* Slightly larger radius for a softer look */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.spri_package div:hover {
+  transform: scale(1.02); /* Slight zoom on hover */
+}
+
+.spri_package img {
+  width: 100%;
+  height: 400px; /* Increased height for better proportions */
+  object-fit: cover;
+  max-width: 1000px; /* Matches parent max-width */
+  display: block; /* Removes any inline spacing */
+}
+
+.spri_package p {
+  position: absolute;
+  bottom: 15px; /* Slightly higher for better spacing */
+  left: 15px;
+  padding: 8px 15px; /* Increased padding for readability */
+  margin: 0;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent background for contrast */
+  border-radius: 5px; /* Rounded corners for text overlay */
+}
+
+.spri_package a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold; /* Bolder text for emphasis */
+}
+
+.spri_package a:hover {
+  text-decoration: underline;
+  color: orange;
+}
+
+.learn-more {
+  margin-top: 20px;
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.learn-more:hover {
+  color: orange;
+  text-decoration: underline;
+}
+
+
+/* Container styles */
+/* Container styles */.deals
+.deals {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Heading styles */
+.deals h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Grid layout for deals */
+.deal-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 20px;
+}
+
+/* Individual deal styles */
+.deal {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 300px;
+  height: 100%;
+}
+
+/* Large deal styles */
+.deal.large {
+  grid-column: auto;
+  grid-row: auto;
+}
+
+/* Ensure smaller deals fill their grid cell */
+.deal:not(.large) {
+  height: 100%;
+  min-width: 30px;
+}
+
+/* Image styles */
+.deal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  max-width: none;
+}
+
+/* Limit image width for smaller deals */
+.deal:not(.large) img {
+  max-width: 350px; /* For smaller deals */
+  height: 100%;
+}
+
+/* Text overlay styles */
+.deals p {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: large;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  z-index: 1; /* Ensure text is above image */
+}
+
+/* Link styles */
+.deals a {
+  color: white;
+  text-decoration: none;
+}
+
+.deals a:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+/* Media query for larger screens (min-width: 769px) */
+@media (min-width: 769px) {
+  .deal:nth-child(2) {
+      transform: none;
+      width: 100%;
+  }
+
+  .deal:nth-child(2) img {
+      width: 100%;
+      max-width: none;
+      position: static;
+  }
+
+  .deal:nth-child(3) {
+      width: 110%; /* Slightly increase width */
+  }
+
+  .deal:nth-child(3) img {
+      width: 100%;
+      max-width: none;
+  }
+}
+
+/* Media query for small screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .deal-list {
+      display: flex;
+      flex-direction: column; /* Stack deals vertically */
+      gap: 30px; /* Space between deals */
+  }
+
+  .deal,
+  .deal.large {
+      grid-column: auto; /* Reset grid properties */
+      grid-row: auto;
+      width: 100%; /* Full width */
+      min-width: 0; /* Prevent min-width issues */
+      min-height: 250px; /* Adjusted for better text fit */
+  }
+
+  .deal img {
+      max-width: 100%; /* Ensure images don't overflow */
+      height: 250px; /* Fixed height for consistency */
+      object-fit: cover; /* Maintain aspect ratio */
+  }
+
+  /* Override inline margin for Kashmir image */
+  .deal img[alt="Kashmir"] {
+      margin-right: 0;
+  }
+
+  /* Enhanced text visibility on small screens */
+  .deals p {
+      position: absolute;
+      bottom: 20px; /* Increased to avoid edge clipping */
+      left: 10px;
+      right: 10px; /* Allow text to wrap */
+      font-size: 16px; /* Readable size */
+      padding: 12px; /* Increased padding for touch targets */
+      background-color: rgba(0, 0, 0, 0.7); /* Darker for contrast */
+      text-align: center; /* Centered for small screens */
+      line-height: 1.5; /* Better text spacing */
+      max-width: 90%; /* Prevent edge overlap */
+      margin: 0 auto; /* Center horizontally */
+  }
+
+  /* Move text up specifically for the large deal (Thailand) */
+  .deal.large p {
+      bottom: 70px; /* Move text up by increasing the bottom offset */
+      font-size: 14px; /* Slightly reduced for better fit */
+      padding: 10px; /* Adjusted padding */
+      line-height: 1.3; /* Improved line spacing */
+  }
+
+  .deals a {
+      color: white;
+  }
+
+  .deals a:hover {
+      color: lightblue; /* Softer hover color */
+  }
+
+  /* Styles for other sections */
+  .right {
+      padding: 20px;
+  }
+
+  .right h2 {
+      font-size: 24px;
+  }
+
+  .spri_package {
+      max-width: 100%;
+  }
+
+  .spri_package img {
+      height: 250px;
+      max-width: 100%;
+  }
+}
+
+/* Media query for very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .deals h3 {
+      font-size: 20px;
+  }
+
+  .deals p {
+      font-size: 14px; /* Smaller text */
+      padding: 8px; /* Adjusted padding */
+      bottom: 15px; /* Adjusted for smaller screens */
+      max-width: 85%; /* Tighter fit */
+  }
+
+  .deal img {
+      height: 200px; /* Reduced height */
+  }
+
+  /* Move text up for large deal on very small screens */
+  .deal.large p {
+      bottom: 60px; /* Further adjusted up for very small screens */
+      font-size: 12px; /* Reduced for better fit */
+      padding: 6px; /* Adjusted padding */
+      line-height: 1.2; /* Tighter line spacing */
+  }
+
+  .right h2 {
+      font-size: 20px;
+  }
+
+  .spri_package img {
+      height: 200px;
+  }
+
+  .spri_package p {
+      padding: 6px 10px;
+      font-size: 14px;
+  }
+}
+/*====================
+      goa section
+=====================*/
+.goa-package-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.goa-package-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.goa-package-section h2 span {
+  color: orange;
+}
+
+.goa-package-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  align-items: center;
+}
+
+.goa-package-card img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  flex: 1 1 300px;
+  object-fit: cover;
+}
+
+.goa-package-details {
+  padding: 20px;
+  flex: 1 1 300px;
+}
+
+.goa-package-details h3 {
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+
+.goa-package-details p {
+  font-size: 14px;
+  margin: 10px 0;
+  color: #555;
+}
+
+.goa-package-details a {
+  text-decoration: none;
+  color: black;
+  font-size: larger;
+}
+
+.goa-package-details a:hover {
+  color: orange;
+  text-decoration: underline;
+}
+
+#goa-learn-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: orange;
+  text-decoration: underline;
+  font-size: larger;
+}
+
+.hide i {
+  color: orange;
+}
+
+.cont-det {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding-right: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .goa-package-card {
+    flex-direction: column;
+    margin-bottom: 0 !important;
+  }
+
+  .cont-det {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .goa-package-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .hide-days {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .goa-package-section h2 {
+    font-size: 22px;
+  }
+
+  .goa-package-details h3 {
+    font-size: 20px;
+  }
+
+  .goa-package-details p,
+  .goa-package-details a,
+  #goa-learn-more {
+    font-size: 14px;
+  }
+}
+
+/*====================
+      goa section
+=====================*/
+.lake-call-section {
+  position: relative;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.lake-call-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.lake-call-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 20px; /* small padding to avoid edge clipping */
+}
+
+.lake-call-section p {
+  font-size: 2rem; /* use responsive unit */
+  margin: 0;
+}
+
+.lake-contact-button {
+  background: white;
+  color: black;
+  padding: 12px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-block;
+}
+
+.lake-con {
+  margin-top: 15px;
+}
+
+/* 📱 Mobile adjustments */
+@media (max-width: 768px) {
+  .lake-call-section p {
+    font-size: 1.2rem;
+  }
+
+  .lake-contact-button {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+
+  .lake-call-text {
+    padding: 0 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/*=============
+footer
+================*/
+/*=============
+footer
+================*/
+
+.pq-footer-contact-vertical {
+  display: flex;
+  flex-direction: row; /* Horizontal by default */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 100px;
+  flex-wrap: wrap;
+  text-align: left;
+  color: #ccc;
+}
+/* Move social icons and designed by text slightly upward */
+.pq-footer-social {
+  margin-top: -30px; /* Pulls social icons up slightly */
+}
+
+.pq-copyright-footer {
+  margin-top: -30px; /* Pulls designed by text up slightly */
+}
+
+
+.pq-footer-contact-vertical .pq-footer-items {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.pq-footer-contact-vertical .pq-footer-items i {
+  margin-bottom: 10px;
+  margin-right: 0;
+}
+
+/* General Footer Styling */
+#pq-footer {
+  background: linear-gradient(to right,  #f7971e); /* Gradient background */
+  color: black;
+  font-family: 'Segoe UI', sans-serif;
+  padding-top: 40px;
+  padding-bottom: -10px;
+}
+
+.pq-footer-top {
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer Item Styles */
+.pq-footer-items {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.pq-footer-items i {
+  font-size: 24px;
+  margin-right: 15px;
+  color: black; /* Grey icons */
+}
+
+.pq-footer-items-info h4 {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: black;
+  gap: 20px;
+}
+
+.pq-footer-items-info span,
+.pq-footer-items-info a {
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+}
+
+.pq-footer-items-info a:hover {
+  color: #ffffff;
+}
+
+/* Footer Widget */
+.widget {
+  margin-bottom: 30px;
+}
+
+.footer-title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: black;
+}
+
+.menu li {
+  list-style: none;
+  margin-bottom: 8px;
+}
+
+.menu li span {
+  color: #ccc;
+  cursor: pointer;
+}
+
+.menu li span:hover {
+  color: black;
+}
+
+/* Social Icons */
+.pq-footer-social ul {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 0;
+}
+
+.pq-footer-social ul li a {
+  color: black; /* Grey social icons */
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.pq-footer-social ul li a:hover {
+  color: black;
+}
+
+@media (min-width: 992px) {
+  #pq-footer {
+    padding-top: 20px;    /* reduced from 40px */
+    padding-bottom: 10px; /* corrected from -10px, now properly reduced */
+  }
+
+  .pq-footer-top {
+    padding-bottom: 20px; /* reduced from 30px */
+  }
+
+  .pq-footer-items {
+    margin-bottom: 10px;  /* reduce spacing between items */
+  }
+
+  .widget {
+    margin-bottom: 15px; /* reduce widget spacing */
+  }
+}
+
+/* Copyright */
+.pq-copyright-footer {
+  padding: 15px 0;
+  font-size: 14px;
+  
+}
+
+.pq-footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Stacks nicely on small screens */
+  padding: 10px 0;
+}
+
+.pq-footer-bottom {
+  padding: 10px 20px;
+  
+  text-align: center;
+}
+
+.pq-footer-social ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding-left: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+.pq-footer-social ul li a {
+  /* Grey social icons */
+  font-size: 22px; /* Uniform icon size */
+  transition: color 0.3s;
+}
+
+.pq-footer-social ul li a:hover {
+  color: black;
+}
+
+/* “Designed by” Text */
+.pq-copyright {
+  font-size: 14px;
+ 
+  margin-top: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+  .pq-footer-items {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pq-footer-contact-vertical {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .pq-footer-contact-vertical .pq-footer-items {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .pq-footer-contact-vertical .pq-footer-items i {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .pq-footer-items i {
+    margin-bottom: 10px;
+  }
+
+  .pq-sign-up-form {
+    flex-direction: column;
+  }
+
+  .pq-footer-social ul {
+    justify-content: center;
+  }
+
+  .pq-copyright-footer .text-md-start,
+  .pq-copyright-footer .text-md-end {
+    text-align: center !important;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .widget {
+    padding-right: 30px;
+  }
+
+  /* Spacing between email, address, and contact in big screens */
+  .pq-footer-contact-vertical .pq-footer-items {
+    gap: -40px; /* More horizontal spacing */
+  }
+
+  /* Optional padding inside each contact item block */
+  .pq-footer-items {
+    padding-right: 30px;
+  }
+
+  /* Increase font size for headings and text */
+  .pq-footer-items-info h4 {
+    font-size: 20px;
+  }
+
+  .pq-footer-items-info span,
+  .pq-footer-items-info a {
+    font-size: 20px;
+  }
+
+  /* Optional: vertical spacing between each contact block */
+  .pq-footer-items-info {
+    margin-bottom: 20px;
+  }
+}
+
+/* Default mobile-first: stacked layout */
+.pq-copyright-footer .footer-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Layout for large screens only */
+@media (min-width: 992px) {
+  .pq-copyright-footer .footer-row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 0px;
+  }
+}
+@media (min-width: 992px) {
+  #pq-footer {
+      padding-top: 0; /* Set to 0 */
+      padding-bottom: 0; /* Set to 0 */
+  }
+  .pq-footer-top {
+      padding-bottom: 5px; /* Reduced from 10px */
+  }
+  .pq-footer-items {
+      margin-bottom: 2.5px;  /* Reduced from 5px */
+  }
+  .widget {
+      margin-bottom: 5px; /* Reduced from 10px */
+  }
+  .widget {
+      padding-right: 30px;
+  }
+  /* Spacing between email, address, and contact in big screens */
+  .pq-footer-contact-vertical .pq-footer-items {
+      gap: 30px; /* Reduced from 50px */
+      margin-left: 30px;
+  }
+  /* Optional padding inside each contact item block */
+  .pq-footer-items {
+      padding-right: 30px;
+  }
+  /* Increase font size for headings and text */
+  .pq-footer-items-info h4 {
+      font-size: 20px;
+  }
+  .pq-footer-items-info span,
+  .pq-footer-items-info a {
+      font-size: 20px;
+  }
+  /* Optional: vertical spacing between each contact block */
+  .pq-footer-items-info {
+      margin-bottom: 5px; /* Reduced from 10px */
+  }
+  /* Reduce bottom padding effect for social icons */
+  .pq-footer-social {
+      margin-top: 5px; /* Reduced from -30px */
+      margin-left: 10px;
+  }
+  /* Reduce bottom padding effect for Designed by text */
+  .pq-copyright-footer {
+      margin-top: -50px; /* Reduced from -30px */
+      gap: 50px;
+      padding-bottom: 20px;
+  }
+  /* Add gap between social icons and Designed by text */
+  .pq-copyright-footer .footer-row {
+      gap: 750px; /* Added gap between social icons and Designed by text */
+  }
+}
+
+
+@media (max-width: 991px) {
+  .pq-footer-contact-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    width: 100%; /* Full width for centering */
+    padding: 0; /* Remove padding that offsets centering */
+    margin: 0 auto; /* Ensure centering */
+    text-align: center; /* Center text content */
+  }
+
+  .pq-footer-contact-vertical .pq-footer-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    gap: 50px;
+    width: 100%; /* Full width for centering */
+    max-width: 100%; /* Prevent overflow */
+    margin: 0 auto; /* Center content horizontally */
+    padding-left: 40px; /* Remove padding */
+  }
+
+  .pq-footer-contact-vertical .pq-footer-item {
+    display: flex;
+    flex-direction: row; /* Keep icon and text side by side */
+    justify-content: center; /* Center item content */
+    align-items: center; /* Align vertically */
+    text-align: center; /* Center text within item */
+    width: 100%; /* Full width for centering */
+    margin: 0 auto; /* Center item */
+  }
+
+  .pq-copyright-footer {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    width: 100%; /* Full width for centering */
+    padding: 0; /* Remove padding */
+    margin: 0 auto; /* Ensure centering */
+  }
+
+  .pq-copyright-footer .footer-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    gap: 10px;
+    width: 100%; /* Full width for centering */
+    max-width: 100%; /* Prevent overflow */
+    margin: 0 auto; /* Center content horizontally */
+    padding: 0; /* Remove padding */
+  }
+}
+/*
+news letter
+*/
+
+
+
+
+/*=============
+footer
+================*/
+
+
+
+
+
