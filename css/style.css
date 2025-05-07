@@ -81,9 +81,9 @@ header {
 .nav-links {
   display: flex; /* Default flex layout for desktop */
   list-style: none;
-  gap: 30px;
+  gap: 25px;
   padding: 0;
-  margin-right: -40px;
+  
 }
 
 .nav-links a {
